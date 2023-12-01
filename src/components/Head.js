@@ -1,26 +1,36 @@
 import React from "react";
+import { toggleMenu } from "../utils/appSlice";
+import { useDispatch } from "react-redux";
 
 const Head = () => {
+  const dispatch = useDispatch();
+
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu());
+  };
   return (
     <div className="grid grid-flow-col p-2 m-1 shadow-lg">
       <div className="flex col-span-1">
         <img
-          className="h-12"
+          onClick={toggleMenuHandler}
+          className="h-12 cursor-pointer"
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAOVBMVEX///8AAACOjo7CwsItLS3c3Nw/Pz/6+vrGxsaSkpKZmZmIiIjy8vK+vr7w8PA4ODgfHx+3t7fi4uKY3kT7AAAAzklEQVR4nO3byQ3CQAxA0TGQDQhZ+i+WHCiAi2UU3uvga6Q52HJrAAAAAAAAAAAAAAAAAAAAAAA/4N7fKvX37MBHVHskF1b3HXIDn9V5h2du4lrdF2tuYOuqA6NLLmzDeK00DtmBAAAAAAB8dNOl0pQ+8p6rh/oxJxdW90X2du1VnXd45SZW50X2G7atui+25MLz/6UAAAAAAHyc/t5irx7qx55cuFQHxpIb+Ae3a9V5kb5dO/8N6fnvgAEAAAAAAAAAAAAAAAAAAAAAvvEGU4ASPASDdpgAAAAASUVORK5CYII="
           alt="menu_icon"
         />
-        <img
-          className="h-12 mx-2"
-          src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg"
-          alt="youtube_logo"
-        />
+        <a href="/">
+          <img
+            className="h-12 mx-2"
+            src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg"
+            alt="youtube_logo"
+          />
+        </a>
       </div>
       <div className="col-span-10 px-20">
         <input
           className="w-3/4 border border-gray-400 p-2 rounded-l-full"
           type="text"
         />
-        <button className="border border-gray-400 p-2 rounded-r-full">
+        <button className="border border-gray-400 px-5 py-2 rounded-r-full bg-gray-100">
           Search
         </button>
       </div>
