@@ -7,6 +7,9 @@ import { CiSearch } from "react-icons/ci";
 const Head = () => {
   const [query, setQuery] = useState("");
   const [suggestion, setSuggestion] = useState([]);
+  const [showSuggestion, setShowSuggestion] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,6 +32,11 @@ const Head = () => {
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
   };
+
+  window.onscroll = () => {
+    setShowSuggestion(false);
+  };
+
   return (
     <div className="grid grid-flow-col p-2 m-1 shadow-lg">
       <div className="flex col-span-1">
@@ -53,27 +61,32 @@ const Head = () => {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onFocus={() => setShowSuggestion(true)}
+            onBlur={() => setShowSuggestion(false)}
+            onClick={() => setShowSuggestion(true)}
           />
           <button className="border border-gray-400 px-5 py-2 rounded-r-full bg-gray-100">
             Search
           </button>
-          <div className="py-2 px-5 fixed bg-white w-2/5 shadow-lg rounded-lg ">
-            <ul>
-              <div>
-                {suggestion.map((s) => (
-                  <li
-                    key={s}
-                    className="flex items-center py-1 hover:bg-gray-200"
-                  >
-                    <div className="mr-2">
-                      <CiSearch />
-                    </div>
-                    {s}
-                  </li>
-                ))}
-              </div>
-            </ul>
-          </div>
+          {showSuggestion && (
+            <div className="py-2 px-5 fixed bg-white w-2/5 shadow-lg rounded-lg ">
+              <ul>
+                <div>
+                  {suggestion.map((s) => (
+                    <li
+                      key={s}
+                      className="flex items-center py-1 hover:bg-gray-200"
+                    >
+                      <div className="mr-2">
+                        <CiSearch />
+                      </div>
+                      {s}
+                    </li>
+                  ))}
+                </div>
+              </ul>
+            </div>
+          )}
         </div>
       </div>
       <div className="col-span-1">
