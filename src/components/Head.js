@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { toggleMenu } from "../utils/appSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { YOUTUBE_SEARCH_API } from "../constants/Constants";
 import { CiSearch } from "react-icons/ci";
+import { json } from "react-router-dom";
+import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
   const [query, setQuery] = useState("");
   const [suggestion, setSuggestion] = useState([]);
   const [showSuggestion, setShowSuggestion] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
+
+  const searchCache = useSelector((store) => store.search);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     const Timer = setTimeout(() => {
-      getSearchSuggestion();
+      if (searchCache[query]) {
+        setSuggestion(searchCache[query]);
+      } else {
+        getSearchSuggestion();
+      }
     }, 200);
 
     return () => {
@@ -27,6 +34,13 @@ const Head = () => {
     const json = await data.json();
     setSuggestion(json[1]);
     // console.log(json[1]);
+
+    //update the cache
+    dispatch(
+      cacheResults({
+        [query]: json[1],
+      })
+    );
   };
 
   const toggleMenuHandler = () => {
