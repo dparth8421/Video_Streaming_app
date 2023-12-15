@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { toggleMenu } from "../utils/appSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { YOUTUBE_SEARCH_API } from "../constants/Constants";
+import { SEARCH_ICON, YOUTUBE_SEARCH_API } from "../constants/Constants";
 import { CiSearch } from "react-icons/ci";
-import { json } from "react-router-dom";
+
 import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
@@ -53,10 +53,10 @@ const Head = () => {
 
   return (
     <div className="grid grid-flow-col p-2 m-1 shadow-lg">
-      <div className="flex col-span-1">
+      <div className=" flex col-span-1">
         <img
           onClick={toggleMenuHandler}
-          className="h-12 cursor-pointer"
+          className=" h-10 cursor-pointer"
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAOVBMVEX///8AAACOjo7CwsItLS3c3Nw/Pz/6+vrGxsaSkpKZmZmIiIjy8vK+vr7w8PA4ODgfHx+3t7fi4uKY3kT7AAAAzklEQVR4nO3byQ3CQAxA0TGQDQhZ+i+WHCiAi2UU3uvga6Q52HJrAAAAAAAAAAAAAAAAAAAAAAA/4N7fKvX37MBHVHskF1b3HXIDn9V5h2du4lrdF2tuYOuqA6NLLmzDeK00DtmBAAAAAAB8dNOl0pQ+8p6rh/oxJxdW90X2du1VnXd45SZW50X2G7atui+25MLz/6UAAAAAAHyc/t5irx7qx55cuFQHxpIb+Ae3a9V5kb5dO/8N6fnvgAEAAAAAAAAAAAAAAAAAAAAAvvEGU4ASPASDdpgAAAAASUVORK5CYII="
           alt="menu_icon"
         />
@@ -79,7 +79,7 @@ const Head = () => {
             onBlur={() => setShowSuggestion(false)}
             onClick={() => setShowSuggestion(true)}
           />
-          <button className="border border-gray-400 px-5 py-2 rounded-r-full bg-gray-100">
+          <button className="border border-gray-400 px-4 py-2 rounded-r-full bg-gray-100">
             Search
           </button>
           {showSuggestion && (

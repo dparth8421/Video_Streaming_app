@@ -27,7 +27,7 @@ const ButtonsList = () => {
   return (
     <div className="flex overflow-x-auto no-scrollbar">
       {list.map((name, index) => (
-        <Buttons key={index} name={name} />
+        <Buttons key={index} name={name} isFirstButton={index === 0} />
       ))}
     </div>
   );

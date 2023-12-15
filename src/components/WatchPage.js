@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { closeMenu } from "../utils/appSlice";
 import { useSearchParams } from "react-router-dom";
-
 import CommentsContainer from "./CommentsContainer";
 import LiveChat from "./LiveChat";
+import Suggestion from "./Suggestion";
 
 const WatchPage = () => {
   const dispatch = useDispatch();
@@ -31,9 +31,12 @@ const WatchPage = () => {
         </div>
         <div className="w-full">
           <LiveChat />
+          <Suggestion />
         </div>
       </div>
-      <CommentsContainer />
+      <div className="w-3/5">
+        <CommentsContainer />
+      </div>
     </div>
   );
 };
