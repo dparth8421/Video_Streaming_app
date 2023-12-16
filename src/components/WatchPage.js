@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
 import LiveChat from "./LiveChat";
 import Suggestion from "./Suggestion";
+import ChannelDetails from "./ChannelDetails";
 
 const WatchPage = () => {
   const dispatch = useDispatch();
@@ -29,13 +30,15 @@ const WatchPage = () => {
             allowFullScreen
           ></iframe>
         </div>
-
         <div className="w-full">
           <LiveChat />
           <Suggestion />
         </div>
       </div>
-      <div className="w-3/5">
+      <div>
+        <ChannelDetails />
+      </div>
+      <div className="w-3/4">
         <CommentsContainer />
       </div>
     </div>

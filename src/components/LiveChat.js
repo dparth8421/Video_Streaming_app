@@ -31,6 +31,7 @@ const LiveChat = () => {
           {chatMessages.map((c, i) => (
             <ChatMessage key={i} name={c.name} message={c.message} />
           ))}
+          <span className="text-red-500 font-bold ">Live *</span>
         </div>
       </div>
 

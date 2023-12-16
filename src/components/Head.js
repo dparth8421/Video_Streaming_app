@@ -9,7 +9,6 @@ import {
   YOUTUBE_SEARCH_API,
 } from "../constants/Constants";
 import { CiSearch } from "react-icons/ci";
-
 import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
@@ -58,11 +57,11 @@ const Head = () => {
   };
 
   return (
-    <div className="grid grid-flow-col p-2 m-1 shadow-lg">
-      <div className=" flex col-span-1">
+    <div className="grid grid-flow-col p-2 m-1 shadow-lg justify-between">
+      <div className="flex col-span-1">
         <img
           onClick={toggleMenuHandler}
-          className=" h-10 cursor-pointer"
+          className="h-10 cursor-pointer"
           src={MENU_ICON}
           alt="menu_icon"
         />
@@ -70,10 +69,10 @@ const Head = () => {
           <img className="h-12 mx-2" src={YOUTUBE_LOGO} alt="youtube_logo" />
         </a>
       </div>
-      <div className="col-span-10 px-20">
-        <div>
+      <div className="col-span-10 md:col-span-6 px-4 md:px-20">
+        <div className="flex items-center">
           <input
-            className="w-3/4 border border-gray-400 p-2 rounded-l-full"
+            className="w-full md:w-3/4 border border-gray-400 p-2 rounded-l-full focus:outline-none"
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -81,31 +80,31 @@ const Head = () => {
             onBlur={() => setShowSuggestion(false)}
             onClick={() => setShowSuggestion(true)}
           />
-          <button className="border border-gray-400 px-4 py-2 rounded-r-full bg-gray-100">
-            Search
+          <button className="border border-gray-400 px-4 py-2 rounded-r-full  bg-gray-100 ">
+            <img className="h-6" src={SEARCH_ICON} />
           </button>
-          {showSuggestion && (
-            <div className="py-2 px-5 fixed bg-white w-2/5 shadow-lg rounded-lg ">
-              <ul>
-                <div>
-                  {suggestion.map((s) => (
-                    <li
-                      key={s}
-                      className="flex items-center py-1 hover:bg-gray-200"
-                    >
-                      <div className="mr-2">
-                        <CiSearch />
-                      </div>
-                      {s}
-                    </li>
-                  ))}
-                </div>
-              </ul>
-            </div>
-          )}
         </div>
+        {showSuggestion && (
+          <div className="py-2 px-5 fixed bg-white w-full md:w-2/5 shadow-lg rounded-lg mt-2 md:mt-0">
+            <ul>
+              <div>
+                {suggestion.map((s) => (
+                  <li
+                    key={s}
+                    className="flex items-center py-1 hover:bg-gray-200 "
+                  >
+                    <div className="mr-2">
+                      <CiSearch />
+                    </div>
+                    {s}
+                  </li>
+                ))}
+              </div>
+            </ul>
+          </div>
+        )}
       </div>
-      <div className="col-span-1">
+      <div className="hidden md:block col-span-1">
         <img className="h-10" src={USER_ICON} alt="user_icon" />
       </div>
     </div>
