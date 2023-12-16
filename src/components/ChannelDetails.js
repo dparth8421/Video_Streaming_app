@@ -3,7 +3,7 @@ import { PROFILE } from "../constants/Constants";
 
 const ChannelDetails = () => {
   return (
-    <div className=" w- flex p-4 mx-4 bg-gray-100 rounded-lg">
+    <div className=" w- flex p-4 mx-4  bg-gray-100 rounded-lg">
       <div className="flex items-center">
         <img className="h-10 w-10 rounded-full" src={PROFILE} alt="Profile" />
         <div className="flex ml-6 items-center">
