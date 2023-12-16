@@ -20,8 +20,9 @@ const SuggestionCard = ({ data, index }) => {
   if (index >= 15) {
     return null;
   }
+
   return (
-    <div className="flex my-2 bg-white rounded-lg overflow-hidden ">
+    <div className="flex my-2 bg-white rounded-lg overflow-hidden">
       <img
         className="w-56 h-28 object-containr rounded-l-lg"
         src={thumbnails.medium.url}

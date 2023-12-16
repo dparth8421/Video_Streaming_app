@@ -8,7 +8,7 @@ const SideBar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="p-5 shadow-lg w-48 h-screen overflow-y-scroll no-scrollbar">
+    <div className=" p-5 shadow-lg w-48 h-screen overflow-y-scroll no-scrollbar">
       <ul className="">
         <div className="flex pb-5">
           <img

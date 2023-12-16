@@ -18,7 +18,7 @@ const Suggestion = () => {
 
   return (
     <div className="absolute">
-      <div className="flex flex-col my-4 pl-3 ">
+      <div className="flex flex-col my-4 pl-3  ">
         {suggestedVideos.map((video, index) => (
           <Link to={"/watch?v=" + video.id} key={video.id}>
             <SuggestionCard data={video} index={index} />

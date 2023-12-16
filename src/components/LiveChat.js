@@ -28,10 +28,10 @@ const LiveChat = () => {
     <>
       <div>
         <div className="ml-2 p-2 h-[450px] w-full border border-black rounded-lg bg-slate-100 overflow-y-scroll flex flex-col-reverse">
+          <div className="text-red-500 font-bold ml-80 ">Live *</div>
           {chatMessages.map((c, i) => (
             <ChatMessage key={i} name={c.name} message={c.message} />
           ))}
-          <span className="text-red-500 font-bold ">Live *</span>
         </div>
       </div>
 
@@ -50,7 +50,7 @@ const LiveChat = () => {
         }}
       >
         <input
-          className="px-2 w-72 rounded-lg border border-black"
+          className="px-2 w-72 rounded-lg border border-black outline-none"
           type="text"
           value={liveMessage}
           onChange={(e) => {
