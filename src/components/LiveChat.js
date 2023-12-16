@@ -56,7 +56,9 @@ const LiveChat = () => {
             setLiveMessage(e.target.value);
           }}
         />
-        <button className="px-5 mx-2 bg-green-100">Send</button>
+        <button className="px-5 ml-2 rounded-lg border border-black bg-green-100">
+          Send
+        </button>
       </form>
     </>
   );

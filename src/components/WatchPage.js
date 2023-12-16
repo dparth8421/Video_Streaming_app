@@ -29,6 +29,7 @@ const WatchPage = () => {
             allowFullScreen
           ></iframe>
         </div>
+
         <div className="w-full">
           <LiveChat />
           <Suggestion />
