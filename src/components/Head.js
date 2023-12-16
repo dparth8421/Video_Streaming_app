@@ -57,16 +57,20 @@ const Head = () => {
   };
 
   return (
-    <div className="grid grid-flow-col p-2 m-1 shadow-lg justify-between">
-      <div className="flex col-span-1">
+    <div className="grid grid-flow-col p-2 m-1 shadow-lg justify-between ">
+      <div className="flex col-span-1  ">
         <img
           onClick={toggleMenuHandler}
-          className="h-10 cursor-pointer"
+          className="h-10 cursor-pointer "
           src={MENU_ICON}
           alt="menu_icon"
         />
         <a href="/">
-          <img className="h-12 mx-2" src={YOUTUBE_LOGO} alt="youtube_logo" />
+          <img
+            className="h-12 mx-2 hidden sm:flex"
+            src={YOUTUBE_LOGO}
+            alt="youtube_logo"
+          />
         </a>
       </div>
       <div className="col-span-10 md:col-span-6 px-4 md:px-20">
