@@ -6,7 +6,13 @@ const commentsData = [
       {
         name: "Rahul",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-        replies: [],
+        replies: [
+          {
+            name: "Rahul",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+            replies: [],
+          },
+        ],
       },
       {
         name: "Rahul",
@@ -113,37 +119,11 @@ const commentsData = [
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
             replies: [],
           },
+
           {
             name: "Rahul",
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-            replies: [
-              {
-                name: "Rahul",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-                replies: [],
-              },
-              {
-                name: "Rahul",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-                replies: [],
-              },
-              {
-                name: "Rahul",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-                replies: [],
-              },
-            ],
-          },
-          {
-            name: "Rahul",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-            replies: [
-              {
-                name: "Rahul",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-                replies: [],
-              },
-            ],
+            replies: [],
           },
         ],
       },

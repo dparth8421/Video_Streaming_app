@@ -38,7 +38,7 @@ const WatchPage = () => {
       <div>
         <ChannelDetails />
       </div>
-      <div className="w-3/4">
+      <div className="w-3/5">
         <CommentsContainer />
       </div>
     </div>
